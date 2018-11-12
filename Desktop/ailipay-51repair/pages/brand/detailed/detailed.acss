@@ -1,0 +1,64 @@
+page{
+background-color:white;
+}
+.con{
+  width:100%;font-size:26rpx;
+}
+.con .model{
+  width:720rpx;margin:0 auto;margin-top:15rpx;
+} 
+.con>image{
+  width:750rpx;height:328rpx;
+}
+
+.hr{
+    width:720rpx;height:5rpx;border-radius: 1rpx;background:#d3d3d3;margin-top:10rpx;
+}
+.hr-left{
+     width:20%;height:5rpx;background:#ff9d00
+}
+
+.title{
+  color:#ff9d00;margin-top:42rpx;
+}
+.a1{
+    margin-top:40rpx;
+}
+
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10rpx 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.bot>button {
+  width: 97%;
+  color: #fff;
+  margin:0 auto;
+}
+.box{
+    width:718rpx;border:1rpx solid #d3d3d3;padding-bottom: 20rpx;margin-top:40rpx;border-radius:12rpx;
+}
+.box-title{
+    width:718rpx;background:#d3d3d3;line-height:40rpx;height:40rpx;position:relative;padding:10rpx 0;border-radius:12rpx 12rpx 0 0;
+}
+.box-title>text{
+    margin-left:20rpx;
+}
+.price{
+    position:absolute;right:100rpx;top:12rpx;
+}
+.active .select{
+   position:absolute; right:20rpx;top:12rpx;width:30rpx;height:30rpx;border-radius: 50%;background:#ff9d00;border:1px solid white;background-image: url('http://m.51xiuj.com/style_new/img/mobile/ico_choose.png');
+    background-size: 100% 100%;
+}
+.active{
+    background:#ff9d00;color:white;
+}
+.point{
+    margin-left:20rpx;margin-right:20rpx;margin-top:20rpx;
+}

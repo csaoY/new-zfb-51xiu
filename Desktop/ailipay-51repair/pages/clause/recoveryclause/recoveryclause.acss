@@ -1,0 +1,14 @@
+/* pages/assessment/placeorder/clause/recoveryclause/recoveryclause.wxss */
+/* pages/assessment/placeorder/clause/clause.wxss */
+.con{
+    width:700rpx;padding:10rpx 25rpx;font-size:26rpx;
+}
+.title{
+    font-size:30rpx;font-weight:bold;
+}
+.hr{
+    width:100%;height:1px;background:#d3d3d3;margin:20rpx 0 ;
+}
+.content text{
+    font-weight:bold;margin-top:20rpx;margin-bottom:10rpx;display:block;font-size:28rpx;
+}

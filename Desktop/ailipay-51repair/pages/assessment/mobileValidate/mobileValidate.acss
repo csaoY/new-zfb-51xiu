@@ -1,0 +1,27 @@
+/* pages/assessment/phonetest/phonetest.wxss */
+
+   
+.form>input{
+ background:white;height: 100rpx;margin-top:30rpx;padding-left:40rpx;
+
+
+}
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16rpx 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.bot>button {
+  width: 97%;
+  background: #ff9d00;
+  color: #fff;
+}
+
+.bot>button:disabled {
+  background: #eee;
+}

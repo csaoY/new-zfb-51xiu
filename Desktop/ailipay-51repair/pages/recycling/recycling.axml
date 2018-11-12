@@ -1,0 +1,38 @@
+<import src="../templates/netError.axml" />
+<view class="container">
+  <view class="tab-flex">
+    <scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px;" class="left-tab">
+      <view class="brand-title">
+        <text class="cla">品牌</text>
+      </view>
+      <block a:for="{{mobiles}}" a:key="mobile_id" a:for-index="idx" a:for-item="mobile">
+        <view class=" {{currentSelectedMobile==idx ? 'brand-active' : 'brand'}}" onTap="mobileTypeTap" data-idx="{{idx}}" data-brandId="{{mobile.id}}">
+          <text class="cla">{{mobile.brandName}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px;" class="right-tab">
+      <view class="kind-title">
+        <view class="{{type=='phone' ? 'phone-active' : 'pad'}}" data-type="phone" onTap="switchTab">手机</view>
+        <view class="{{type=='pad' ? 'phone-active' : 'pad'}}" data-type="pad" onTap="switchTab">平板</view>
+      </view>
+      <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}" />
+      <view class="box" hidden="{{type=='phone' ? '' : true}}" a:if="{{hasNetError===false}}">
+        <block a:for="{{versionList}}" a:key="id" a:for-index="idx" a:for-item="version">
+          <view class="phone-bar" onTap="ontapTobuy" data-phone="{{version.versionName}}" data-versionId="{{version.id}}">
+            <view class="type">{{version.versionName}}</view>
+            <!--<text class="price">￥{{version.hprice}}</text>-->
+          </view>
+        </block>
+      </view>
+      <view class="box" hidden="{{type=='pad' ? '' : true}}" a:if="{{hasNetError===false}}">
+        <block a:for="{{versionList}}" a:key="id" a:for-index="idx" a:for-item="version">
+          <view class="phone-bar" onTap="ontapTobuy" data-phone="{{version.versionName}}" data-versionId="{{version.id}}">
+            <text class="type">{{version.versionName}}</text>
+            <!--<text class="price">￥{{version.hprice}}</text>-->
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

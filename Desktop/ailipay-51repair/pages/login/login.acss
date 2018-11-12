@@ -1,0 +1,152 @@
+.con {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 4rpx;
+  margin-top: 100rpx;
+}
+
+.main {
+  width: 750rpx;
+}
+
+.mobile {
+  position: relative;
+  width: 600rpx;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  height: 50rpx;
+}
+
+.mobile>image {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 50rpx;
+  position: absolute;
+  top: 20rpx;
+}
+
+.mobile>input {
+  display: inline-block;
+  width: 500rpx;
+  margin-left: 25rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 70rpx;
+}
+
+.yzm {
+  position: absolute;
+  right: 10rpx;
+  font-size: 30rpx;
+  z-index: 2;
+  top: 12rpx;
+ padding: 20rpx 10rpx;  
+  
+  color: #646464;  
+  border-radius:6rpx;
+}
+
+button {
+  width: 600rpx;
+  background: #ee781e
+;
+  color: white;
+  margin-top: 100rpx;
+}
+
+button:disabled {
+  background: #ccc;
+  color: white;
+}
+
+.txt {
+  text-align: center;
+  font-size: 25rpx;
+  margin-top: 50rpx;
+}
+
+page {
+  background: #f5f5f5;
+}
+
+.xieyi {
+  color: blue;
+}
+
+
+
+
+
+
+/*button*/  
+.btn {  
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+}  
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+/*content*/  
+.drawer_box {  
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px;  
+ 
+}  
+
+.drawer_content {  
+  height: 210px;  
+  overflow-y: scroll; /*超出父盒子高度可滚动*/  
+  
+}  
+
+
+.content input{
+  width:300rpx;height:50rpx;border-width:0;float:left;margin-left:50rpx;margin-bottom:200rpx;position:relative;top:100rpx;
+}
+.content image{
+   width:150rpx;height:50rpx;display:inline-block;float:left;margin-bottom:200rpx;position:relative;top:100rpx;margin-left:50rpx;
+}
+.submit{
+  margin-bottom:20rpx;
+  margin:0 auto;
+}
+.no{
+  position:absolute;right:20rpx;top:20rpx;font-size:34rpx;
+}

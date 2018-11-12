@@ -1,0 +1,59 @@
+<form onSubmit="submitOrder">
+  <view class="con">
+    <view class="collections">
+      <view class="collections-title">填写信息</view>
+      <view class="hr">
+        <view class="hr-left"></view>
+      </view>
+      <view class="section-all">
+        <view class="section">
+          <picker onChange="bindCityPickerChange" value="{{cityListIndex}}" range-key="area" range="{{cityList}}" name="cityIndex">
+            <view class="picker">{{cityList[cityListIndex].area}}</view>
+          </picker>
+        </view>
+        <view class="section" hidden="{{cityListIndex===1}}">
+          <picker name="areaCode" onChange="bindAreaPickerChange" value="{{areaListIndex}}" range-key="area" range="{{areaList}}">
+            <view class="picker">{{areaList[areaListIndex].area}}</view>
+          </picker>
+        </view>
+      </view>
+      <input name="address" placeholder="填写详细地址（区/街道/楼号）" maxlength="50"/>
+      <input name="contactName" placeholder="联系人名" maxlength="40"/>
+      <input name="contactPhone" placeholder="填写本人手机号码" maxlength="11"/>
+      <input name="remark" placeholder="备注" maxlength="40"/>
+      <view class="collections-title">回收信息</view>
+      <view class="hr">
+        <view class="hr-left"></view>
+      </view>
+      <view class="price">
+        <block a:for="{{selectedDetailList}}" a:key="id" a:for-index="idx" a:for-item="selectedDetail" data-idx="{{idx}}">
+          <view class="list">
+            <view class="list-tit">
+              <view class="ico"></view>
+              {{selectedDetail.phone}}
+            </view>
+              <view class="list-con"></view>
+              <view class="list-pri">￥ {{selectedDetail.price}}</view>
+            </view>
+          </block>
+          <view class="all-pri">
+            总计: <text>￥{{selectedDetailList[0].price}}</text>
+          </view>
+        </view>
+        <view class="hr1"></view>
+        <view class="classname">
+          <checkbox-group onChange="checkboxChange">
+            <checkbox name="userAgreement" value="true" checked="true"style="z-index:1"/>
+            同意<text class="xiu" onTap="model"> 51修回收条款</text>
+          </checkbox></checkbox-group>
+        </view>
+      </view>
+      <view class="bot" a:if="{{orderFormOK===false}}">
+        <button disabled formType="submit" style="height: 100%;">提交订单</button>
+      </view>
+      <view class="bot" a:elif style="z-index:2">
+        <button style="height: 100%;background: #ff9d00;" formType="submit">提交订单</button>
+      </view>
+      <view class="box"></view>
+    </view>
+  </form>

@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/brand/brand",
+    "pages/recycling/recycling",
+    "pages/memoryUpgrade/memoryUpgrade",
+    "pages/more/more",
+    "pages/login/login",
+    "pages/brand/selectmodel/selectmodel",
+    "pages/brand/detailed/detailed",
+    "pages/brand/placeorder/placeorder",
+    "pages/last/fixlast/last",
+    "pages/last/rebuylast/last",
+    "pages/assessment/assessment",
+    "pages/assessment/assessment_list/assessment_list",
+    "pages/assessment/placeorder/placeorder",
+    "pages/clause/recoveryclause/recoveryclause",
+    "pages/clause/maintenanceclause/maintenanceclause",
+    "pages/more/orderitemre/orderitemre",
+    "pages/more/myorder/myorder",
+    "pages/more/send/send",
+    "pages/more/orderitem/orderitem"
+  ],
+  "window": {
+    "titleBarColor": "#ee781e",
+    "defaultTitle": "51修",
+    "titleBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#f57129",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "51修",
+        "icon": "images/index.png",
+        "activeIcon": "images/index_focus.png"
+      },
+      {
+        "pagePath": "pages/recycling/recycling",
+        "name": "回收",
+        "icon": "images/recycle.png",
+        "activeIcon": "images/recycle_focus.png"
+      },
+      {
+        "pagePath": "pages/memoryUpgrade/memoryUpgrade",
+        "name": "升级",
+        "icon": "images/memory.png",
+        "activeIcon": "images/memory_focus.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "name": "个人中心",
+        "icon": "images/my.png",
+        "activeIcon": "images/my_focus.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

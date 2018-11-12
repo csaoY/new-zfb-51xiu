@@ -1,0 +1,20 @@
+<!-- send.wxml -->
+<view class="con">
+  <form onSubmit="submitOrder">
+    <input placeholder="请输入快递公司" value="{{com}}" name="com" maxlength="80"/>
+    <input placeholder="请输入快递单号" value="{{no}}" name="no" maxlength="40"/>
+    <view class="notice">
+      <view class="tle">注意事项</view>
+      <view class="hr"></view>
+      <view class="txt">1、邮寄前先解除设备开机密码、指纹解锁等功能，并做好数据备份。</view>
+      <view class="txt">2、请优先选择顺丰速运到付并自主选择保价邮寄（保价金额不得超过2000元），51修只承担来回邮费。</view>
+      <view class="txt">3、使用其他快递邮寄请先垫付，维修完成后将在维修费用中扣除。</view>
+      <view class="txt">4、请在包裹中用一张纸写上您下单时候的姓名、电话，便于我们快速维修您的设备。</view>
+    </view>
+    <view class="bot">
+      <button disabled="{{orderFormOK==false}}" formType="submit">提交</button>
+    </view>
+  </form>
+</view>
+
+

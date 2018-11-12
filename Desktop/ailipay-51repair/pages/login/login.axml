@@ -1,0 +1,31 @@
+<form onSubmit="submitLogin">
+  <view class="con">
+    <view class="header">
+      <image src="/images/log.png" class="logo"></image>
+    </view>
+    <view class="main">
+      <view class="mobile">
+        <image src="/images/mobile.png"></image>
+        <input style="outline:none;border-width:0;background:#F5F5F5;" placeholder="手机号" onInput="bindChangePhoneNumber" name="phoneNumber" maxlength="11" value="{{phoneNumber}}"/>
+      </view>
+      <view class="mobile">
+        <image src="/images/login.png"></image>
+        <input style="outline:none;border-width:0;background:#F5F5F5;" placeholder="验证码" name="vercode" maxlength="4" onInput="bindChangeVercode"/>
+        <view class="yzm" onTap="setVerify" data-statu="open" data-phonenumber="{{phoneNumber}}">{{verifyCodeTip}}</view>
+      </view>
+      <button disabled="{{loginFormOK===false}}" style="margin:0 auto;" form-type="submit">无需注册，验证码登录</button>
+      <!-- <button style="margin:0 auto;" form-type="submit">无需注册，验证码登录</button> -->
+    </view>
+  </view>
+</form>
+<view class="drawer_screen" onTap="powerDrawer" data-statu="close" a:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" a:if="{{showModalStatus}}">
+  <form onSubmit="verifyCode">
+  <view class="content">
+    <input placeholder="请输入右侧图片验证码" name="verifyCode" maxlength="4" style="font-size:24rpx"/>
+    <image src="{{verifyCodeURL}}" onTap="loadGenerateVerifyCode"></image>
+  </view>
+  <button class="submit" form-type="submit">提交</button>
+  <view class="no" onTap="powerDrawer" data-statu="close">×</view>
+  </form>
+</view>

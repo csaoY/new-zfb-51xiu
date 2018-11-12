@@ -1,0 +1,57 @@
+/* send.wxss */
+.con{
+  width:740rpx;padding:30rpx 5rpx 0 5rpx;
+
+  background:white;
+}
+.con input:first-child{
+   border:1px solid #eee;border-radius:5px;
+  padding: 20rpx 10rpx;
+  font-size:30rpx;
+}
+.con input:nth-child(2n){
+  border:1px solid #eee;border-radius:5px;
+  margin-top:20rpx;padding: 20rpx 10rpx;
+  font-size:30rpx;
+
+}
+
+
+.notice {
+  width: 720rpx;
+  margin: 0 auto;
+  background: white;
+  padding: 40rpx 15rpx;
+  margin-top: 30rpx;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  background: #d3d3d3;
+  margin: 20rpx 0;
+}
+
+.notice>.txt {
+  font-size: 26rpx;
+  color: #7c7c7c;
+}
+.tle{
+  font-size: 26rpx;color:#333;font-weight: bold;
+}
+
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16rpx 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+.bot>button {
+  width: 97%;
+  background: #ff9d00;
+  color: #fff;
+  margin:0 auto;
+}

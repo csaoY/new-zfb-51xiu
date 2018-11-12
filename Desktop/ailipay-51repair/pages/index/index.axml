@@ -1,0 +1,48 @@
+<import src="../templates/netError.axml" />
+<view class="con">
+
+  <image src="/images/main.png" class="header"></image>
+
+  <view class="brand">
+    <view class="brand-title">维修品牌列表</view>
+    <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}" />
+    <block a:for="{{brandInfo}}" a:for-index="idx" a:key="brandId" a:for-item="item" data-idx="{{idx}}">
+      <view class="brand-list" onTap="bindQueTap" data-typeId="{{item.typeId}}" data-brandId="{{item.brandId}}">
+        <image src="{{item.imgUrl}}"></image>
+        <view class="listtext">{{item.brandName}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="form">
+    <form onSubmit="submitOrder">
+      <image src="/images/title.png" class="img"></image>
+      <view class="input">
+        <image src="/images/user.png"></image>
+        <input name="name" placeholder="联系人" maxlength="20" value="{{name}}"/>
+      </view>
+      <view class="input">
+        <image src="/images/phone.png"></image>
+        <input name="phoneNumber" placeholder="手机号" onInput="bindChangePhoneNumber" maxlength="11" value="{{phoneNumber}}"/>
+      </view>
+      <view class="mobile">
+        <image src="/images/login.png"></image>
+        <input style="outline:none;border-width:0;" placeholder="验证码" name="vercode" value="{{vercode}}" maxlength="4" onInput="bindChangeVercode"  />
+        <view class="yzm" onTap="setVerify" data-statu="open" data-phoneNumber="{{phoneNumber}}">{{verifyCodeTip}}</view>
+      </view>
+      <button class="btn" formType="submit">立即下单</button>
+    </form>
+  </view>
+  <view style="height:25rpx;"></view>
+</view>
+
+<view class="drawer_screen" onTap="powerDrawer" data-statu="close" a:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" a:if="{{showModalStatus}}">
+  <form onSubmit="verifyCode">
+  <view class="content">
+    <input placeholder="请输入右侧图片验证码" name="verifyCode" maxlength="4"/>
+    <image src="{{verifyCodeURL}}" onTap="loadGenerateVerifyCode"></image>
+  </view>
+  <button class="submit" formType="submit">提交</button>
+  <view class="no" onTap="powerDrawer" data-statu="close">×</view>
+  </form>
+</view>

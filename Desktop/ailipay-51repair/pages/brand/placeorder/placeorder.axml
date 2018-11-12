@@ -1,0 +1,88 @@
+<form onSubmit="submitOrder">
+  <view class="con">
+    <view class="collections">
+      <view class="collections-title">填写信息</view>
+      <view class="hr">
+        <view class="hr-left"></view>
+      </view>
+      <view class="section-all">
+        <view class="section">
+          <picker onChange="bindCityPickerChange" value="{{cityListIndex}}" range-key="area" range="{{cityList}}"
+                  name="cityIndex">
+            <view class="picker">{{cityList[cityListIndex].area}}</view>
+          </picker>
+        </view>
+        <view class="section" hidden="{{cityListIndex===1}}">
+          <picker name="areaCode" onChange="bindAreaPickerChange" value="{{areaListIndex}}" range-key="area"
+                  range="{{areaList}}">
+            <view class="picker">{{areaList[areaListIndex].area}}</view>
+          </picker>
+        </view>
+      </view>
+      <input name="address" placeholder="填写详细地址（区/街道/楼号）" maxlength="80" />
+      <input name="contactName" placeholder="联系人名" maxlength="40"  />
+      <input name="contactPhone" placeholder="填写本人手机号码" maxlength="11" bindinput="bindContactPhoneInput"  />
+      <input name="remark" placeholder="备注" maxlength="40"  />
+      <view class="collections-title">维修信息</view>
+      <view class="hr">
+        <view class="hr-left"></view>
+      </view>
+      <view class="price">
+        <block a:for="{{selectedPlanList}}" a:key="id" a:for-index="idx" a:for-item="selectedPlan"
+               data-idx="{{idx}}">
+          <view class="list">
+            <view class="list-tit">
+              <view class="ico"></view>
+              {{selectedPlan.faultPartDetail}}
+            </view>
+              <view class="list-con">{{selectedPlan.plan}}</view>
+              <view class="list-pri">￥ {{selectedPlan.price}}</view>
+            </view>
+          </block>
+          <view class="all-pri">
+            总计: <text>￥{{totalPrice}}</text>
+            <view class="discount" hidden="{{couponList.length===0 || totalCouponPrice===0}}">-￥{{totalCouponPrice}}</view>
+          </view>
+        </view>
+        <view class="hr1"></view>
+
+        <view class="coupon_wrapper" hidden="{{couponList.length===0}}">
+          <view class="coupon-tit">您有以下优惠券可以兑换</view>
+          <block a:for="{{couponList}}" a:key="id" a:for-index="idx" a:for-item="coupon" data-idx="{{idx}}">
+          <view a:if="{{coupon.isSelected===true}}" class="coupon active" onTap="onSelectCoupon" data-idx="{{idx}}" data-id="{{coupon.id}}" data-coupon_type="{{coupon.coupon_type}}">
+            <view class="coupon-left"></view>
+            <view class="coupon-right">
+              <view class="coupon-num">{{coupon.coupon_price}}元</view>
+              <view class="coupon-kind">{{coupon.detail}}</view>
+            </view>
+          </view>
+          <view a:else="{{coupon.isSelected===false}}" class="coupon" onTap="onSelectCoupon" data-idx="{{idx}}" data-id="{{coupon.id}}" data-coupon_type="{{coupon.coupon_type}}">
+            <view class="coupon-left"></view>
+            <view class="coupon-right">
+              <view class="coupon-num">{{coupon.coupon_price}}元</view>
+              <view class="coupon-kind">{{coupon.detail}}</view>
+            </view>
+          </view>
+          </block>
+        </view>
+
+        <view class="last-view">
+          <text>应付金额:</text>
+          <text class="last-price">￥{{totalPrice-totalCouponPrice}}</text>
+        </view>
+        <view class="classname">
+          <checkbox-group onChange="checkboxChange">
+            <checkbox name="userAgreement" value="true" checked="true" style="z-index:1"/>
+            同意<text class="xiu" onTap="model">51修维修条款</text>
+          </checkbox-group>
+        </view>
+      </view>
+      <view class="bot" a:if="{{orderFormOK===false}}" >
+        <button disabled formType="submit" style="height: 100%;">提交订单</button>
+      </view>
+      <view class="bot" a:elif>
+        <button style="height: 100%;background: #ff9d00;" formType="submit">提交订单</button>
+      </view>
+      <view class="box"></view>
+    </view>
+  </form>

@@ -1,0 +1,7 @@
+<template name="netError">
+  <view class="con" style="text-align:center">
+    <view class="first">出了点小问题(似乎已断开与互联网的连接.)</view>
+    <view class="second">我们正在紧张的修复</view>
+    <button class="third" onTap="refresh">刷新</button>
+  </view>
+</template>

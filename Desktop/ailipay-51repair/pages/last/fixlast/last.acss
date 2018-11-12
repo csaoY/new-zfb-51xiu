@@ -1,0 +1,221 @@
+/* pages/last/last.wxss */
+
+.con {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.bar-all {
+  position: relative;
+  margin-top: 50rpx;
+  height: 30rpx;
+  margin-left: 75rpx;
+}
+
+/**.bar {
+  height: 2px;
+  width: 150rpx;
+  background: #d3d3d3;
+  display: inline-block;
+}
+
+.bar-active {
+  background: #ff9d00;
+}
+
+.point {
+  width: 20rpx;
+  height: 20rpx;
+  background: #d3d3d3;
+  border-radius: 50%;
+}
+
+.point1 {
+  position: absolute;
+  top: 18rpx;
+  left: 0;
+  background: #ff9d00;
+}
+
+.point2 {
+  position: absolute;
+  top: 18rpx;
+  left: 150rpx;
+  background: #ff9d00;
+  background-size: 100% 100%;
+  background-image: url('http://m.51xiuj.com/style_new/img/mobile/ico_choose.png');
+}
+
+.point3 {
+  position: absolute;
+  top:18rpx;
+  left: 300rpx;
+}
+
+.point4 {
+  position: absolute;
+  top: 18rpx;
+  left: 450rpx;
+}
+
+.point5 {
+  position: absolute;
+  top: 18rpx;
+  left: 590rpx;
+}
+**/
+
+.bar{
+  width:600rpx;height:4rpx;background:#d3d3d3;position:relative
+}
+.bar-active{
+  width:150rpx;height:4rpx;background:#ff9d00
+}
+.point{
+  width:20rpx;height:20rpx;position:absolute;background:#d3d3d3;border-radius:50%;
+}
+.point1{
+  left:0;top:-8rpx;background:#ff9d00
+}
+.point2{
+  left:150rpx;top:-8rpx;background:#ff9d00; background-size: 100% 100%;
+  background-image: url('http://m.51xiuj.com/style_new/img/mobile/ico_choose.png');
+}
+.point3{
+  left:300rpx;top:-8rpx;
+}
+.point4{
+  left:450rpx;top:-8rpx;
+}
+.point5{
+  left:600rpx;top:-8rpx;
+}
+.bar-all>text {
+  font-size: 20rpx;
+  position: absolute;
+  top: 48rpx;
+  margin-left: -25rpx;
+  color: #7c7c7c;
+}
+
+.text1 {
+  left: 0;
+  color: #ff9d00;
+}
+
+.text2 {
+  left: 150rpx;
+  color: #ff9d00;
+}
+
+.text3 {
+  left: 300rpx;
+}
+
+.text4 {
+  left: 450rpx;
+}
+
+.text5 {
+  left: 600rpx;
+}
+
+.text {
+  width: 720rpx;
+}
+
+.content {
+  width: 100%;
+  padding: 20rpx 0;
+  text-align: center;
+  background: white;
+  margin-top: 80rpx;
+}
+
+.yes {
+  height: 40rpx;
+  width: 40rpx;
+  background-color: #ff9d00;
+  background-size: 100% 100%;
+  background-image: url('http://m.51xiuj.com/style_new/img/mobile/ico_choose.png');
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  top: 10rpx;
+}
+
+.tit {
+  color: #ff9d00;
+  font-size: 35rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.tit>image {
+  margin-top: 10rpx;
+}
+.send{
+  width: 720rpx;
+  margin: 0 auto;
+  background: white;
+  padding: 40rpx 15rpx;
+  margin-top: 30rpx;
+}
+.send>.send-list{
+  display:flex;line-height:54rpx;width:100%;
+}
+.list-l{
+  flex:1;text-align:right;  font-size: 26rpx;
+  color: #7c7c7c;
+}
+.list-r{
+  flex:3;  font-size: 26rpx;
+  color: #7c7c7c;
+}
+.tle{
+  font-size: 26rpx;color:#333;font-weight: bold;
+}
+.notice {
+  width: 720rpx;
+  margin: 0 auto;
+  background: white;
+  padding: 40rpx 15rpx;
+  margin-top: 30rpx;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  background: #d3d3d3;
+  margin: 20rpx 0;
+}
+
+.notice>.txt {
+  font-size: 26rpx;
+  color: #7c7c7c;
+}
+
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: #eee 1px solid;
+  padding: 16rpx 0;
+  background: white;
+}
+
+.bot button {
+  background: #ff9d00;
+  width: 305rpx;
+  color: white;
+  display: inline-block;
+  margin: 0 0 0 25px;
+}
+
+.bot .read {
+  height: 100%;
+  background: white;
+  color: #7c7c7c;
+}

@@ -1,0 +1,65 @@
+/* pages/more/orderitem/orderitem.wxss */
+page{
+background-color:white;
+}
+.con{
+  width:100%;font-size:28rpx;
+}
+.con .model{
+  width:720rpx;margin:0 auto;margin-top:15rpx;
+} 
+
+
+
+
+.hr{
+    width:720rpx;height:5rpx;border-radius: 1rpx;background:#d3d3d3;margin-top:10rpx;
+}
+.hr-left{
+     width:20%;height:5rpx;background:#ff9d00
+}
+.list{
+    border-bottom:1px dotted #d3d3d3;line-height:60rpx;
+}
+.title{
+    width:180rpx;display:inline-block;line-height:30rpx;color:#7c7c7c;margin-top:30rpx;margin-left:20rpx;
+}
+.detail{
+    width:710rpx;display:inline-block;line-height:30rpx;color:#7c7c7c;margin-top:30rpx;margin-left:20rpx;
+}
+.price{
+    color:#ff9d00;font-weight:bold;
+  }
+.remark{
+  display:inline-block;width:550rpx;margin-top:18rpx;
+}
+.box{
+  border-bottom:1px #eee dotted;
+}
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: #eee 1px solid;
+  padding: 16rpx 0;
+  background: white;
+}
+
+.btn {
+  background: #ff9d00;
+  width: 305rpx;
+  color: white;
+  display: inline-block;
+  margin: 0 0 0 25px;
+}
+.btn1{
+  background:#fff;
+  color:black;
+    width: 305rpx;
+   display: inline-block;
+  margin: 0 0 0 25px;
+}
+
+
+

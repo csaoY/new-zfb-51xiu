@@ -1,0 +1,68 @@
+<import src="../../templates/netError.axml" />
+<view class="container">
+  <view class="tab-flex">
+    <scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px;" class="left-tab">
+      <view class="brand-title">
+        <text class="cla">型号</text>
+      </view>
+      <block a:for="{{versionList}}" a:for-index="idx" a:key="id" a:for-item="version">
+        <view class="{{currentSelectedMobile==idx ? 'brand-active' : 'brand'}}" onTap="mobileTypeTap" data-idx="{{idx}}" data-versionid="{{version.id}}">
+          <text class="cla">{{version.versionName}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height: {{scrollViewHeight}}px;" class="right-tab">
+      <view class="title-all" a:if="{{hasNetError===false}}">颜色</view>
+      <view class="kind-title" a:if="{{hasNetError===false}}">
+        <block a:for="{{colorList}}" a:for-index="idx" a:key="id" a:for-item="color">
+          <view data-type="" onTap="switchColor" class="normal {{currentSelectedColor==idx ? 'active' : ''}}" data-colorid="{{color.id}}" data-idx="{{idx}}">{{color.colorName}}</view>
+        </block>
+      </view>
+      <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}" />
+      <view class="title-all" a:if="{{hasNetError===false}}">故障类型</view>
+
+      <view class="box" a:if="{{hasNetError===false}}">
+        <block a:for="{{planList}}" a:for-index="idx" a:key="faultVO.id" a:for-item="plan">
+          <view class="box-list">
+            <view class="box-list-title" onTap="detailed" data-plan="{{plan}}">
+              <view class="box-list-title-img">
+                <image src="http://msit.51xiuj.com/{{plan.faultVO.imgUrl1}}"></image>
+              </view>
+              <view class="box-list-title-txt">
+                <view>{{plan.faultVO.singleName}}问题</view>
+                <view class="box-list-title-txt-content">{{plan.faultVO.name}}</view>
+              </view>
+              <view class="box-list-title-arrow">
+                <image class="arrow" src="../../../images/ico_app_arr_r.png"></image>
+              </view>
+            </view>
+            <view class="box-list-content">
+              <block a:for="{{plan.planList}}" a:for-index="idx" a:key="id" a:for-item="plan2">
+                <view class="box-list-content-list" onTap="onSelectItem" data-id="{{plan2.id}}">
+                  <text class="bar-a">{{plan2.faultPartDetail}}</text>
+                  <text class="bar-b">￥{{plan2.price}}</text>
+                  <view a:if="{{plan2.isSelected==true}}" class="ico ico_choose" ></view>
+                  <view a:elif="{{plan2.isSelected==false}}" class="ico" ></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="" style="height:122rpx"></view>
+    </scroll-view>
+  </view>
+  <view class="bot">
+    <view class="goodscar">
+    <image src="/images/gouwuche.png" class="gwc"></image>
+      <view>{{selectItemCount}}</view>
+    </view>
+    <view class="price">
+      共计：
+      <text class="price-num">
+        ￥{{totalPrice}}</text>
+      </view>
+      <button a:if="{{selectedPlanList.length===0}}" onTap="next" disabled style="height: 100%;">下一步</button>
+      <button a:elif onTap="next" style="height: 100%;background: #ff9d00;">下一步</button>
+  </view>
+</view>

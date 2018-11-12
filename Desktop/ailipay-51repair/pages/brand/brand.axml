@@ -1,0 +1,28 @@
+<import src="../templates/netError.axml"/>
+<scroll-view scroll-y="true" class="container discovery" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0">
+    <!-- <swiper class="activity" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#F39700"
+    indicator-active-color="#8897A6">
+      <block a:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" style="width:750rpx;height: 375rpx;" mode="aspectFill"/>
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}"/>
+
+    <block a:for="{{brandInfo}}" a:for-index="idx" a:key="brandId" a:for-item="item" data-idx="{{idx}}">
+      <view class="feed-item" onTap="bindQueTap" data-typeId="{{item.typeId}}" data-brandId="{{item.brandId}}">
+        <view class="feed-source">
+            <view class="avatar">
+              <image src="{{item.imgUrl}}"></image>
+            </view>
+            <text>{{item.brandName}}</text>
+           <image src="../../images/ico_app_arr_r.png" class="arrow"></image>
+        </view>
+      </view>
+    </block>
+    
+  </view>
+</scroll-view>

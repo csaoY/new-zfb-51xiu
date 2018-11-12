@@ -1,0 +1,29 @@
+<!-- pages/more/myorder/myorder.wxml -->
+<view class="con">
+  <image src="/images/noorder.png" class="noorder" a:if="{{isOrderListEmpty==true}}"></image>
+  <view class="order">
+    <block a:for="{{orderList}}" a:for-index="idx" a:key="id" a:for-item="order">
+      <view class="order-list" onTap="orderitem" data-id="{{order.id}}" data-ordertype="{{order.orderType}}">
+        <view class="first-bar">
+          <text class="time">{{order.createTime}}</text>
+          <text class="fin">{{order.state}}</text>
+        </view>
+        <view class="second-bar">
+          <view a:if="{{order.orderType==3}}" class="shou">收</view>
+          <view a:elif="{{order.orderType==2}}" class="xiu">修</view>
+          <view a:elif="{{order.orderType==1}}" class="xiu">修</view>
+          <view class="item">
+            <view class="order-num">{{order.orderNo}}</view>
+            <view class="money">
+              金额：
+              <text>￥{{order.totalPrice}} </text>
+            </view>
+          </view>
+          <view class="send">
+          <button catchTap="send" a:if="{{order.repairType==3||order.repairType==2}}" data-inepressno="{{order.inExpressNo}}" data-inexpresscompany="{{order.inExpressCompany}}" data-orderid="{{order.id}}">发货</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

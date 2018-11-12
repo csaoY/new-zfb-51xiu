@@ -1,0 +1,34 @@
+
+<!--pages/assessment/recyclingcar/recyclingcar.wxml-->
+<view class="con">
+  <view class="goods">
+    <block a:for="{{recyclingcars}}" a:for-index="idx" a:key="car_id" a:for-item="recyclingcar" data-idx="{{idx}}">
+      <view class="good-list">
+      <image src="{{recyclingcar.phone_img}}" class="good-img"></image>
+      <view class="goodname">
+        <text class="model">{{recyclingcar.phone}}</text>
+        <text class="price">￥{{recyclingcar.price}}</text>
+      </view>
+      <view class="delet" onTap="deleteCar" data-idx="{{idx}}">删除</view>
+    </view>
+    </block>
+
+    <view class="all-price">
+      <text class="pr-txt">合计：</text>
+      <text class="pr">￥{{totalPrice}}</text>
+    </view>
+    <view class="notice">
+      <text class="notice-title">注意事项</text>
+      <view class="hr"></view>
+      <view class="txt">
+        <view class="">1、因回收设备价格有波动，建议您赶紧出手！</view>
+        <view class="">2、单次回收价格小于50元，不支持回收。</view>
+        <view class="">3、回收设备三天未处理，将视为无效，请重新评估定价。</view>
+      </view>
+    </view>
+  </view>
+  <view class="bot">
+    <button catchtap="reStart">继续回收</button>
+    <button catchtap="">去换钱</button>
+  </view>
+</view>

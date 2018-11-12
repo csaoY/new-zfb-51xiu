@@ -1,0 +1,88 @@
+<view class="con">
+  <view class="model">
+    <text class="title">订单信息</text>
+    <view class="hr">
+      <view class="hr-left "></view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">订单号：</view>
+        <text>{{orderInfo.orderNo}}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">下单时间：</view>
+        <text>{{createTime}}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">订单状态：</view>
+        <text>{{deviceStatStr}}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">品牌：</view>
+        <text>{{orderInfo.repairBrand}}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">型号：</view>
+        <text>{{orderInfo.repairVersion}}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title">颜色：</view>
+        <text>{{orderInfo.repairColor}}</text>
+      </view>
+    </view>
+    <view></view>
+    <view class="model">
+      <text class="title">设备故障</text>
+    </view>
+    <view class="hr">
+      <view class="hr-left"></view>
+    </view>
+    <view class="list">
+      <block a:for="{{orderDetailList}}" a:key="detailId" a:for-index="idx" a:for-item="orderDetail">
+        <view class="box">
+          <view>
+            <view class="detail">{{orderDetail.detail}}</view>
+          </view>
+          <view>
+            <view class="title">价格：</view>
+            <text class="price">￥{{orderDetail.price}}</text>
+          </view>
+        </view>
+      </block>
+      <view>
+        <view class="title">总计：</view>
+        <text class="price">￥{{totalPrice}}</text>
+        （以实际价格为标准）
+      </view>
+    </view>
+    <view class="model">
+      <text class="title">其他信息</text>
+    </view>
+    <view class="hr">
+      <view class="hr-left"></view>
+    </view>
+    <view class="list">
+      <view>
+        <view class="title" style="float:left;">我的备注：</view>
+        <text style="display:inline-block;width:550rpx;margin-top:18rpx;">{{orderInfo.remark}}</text>
+        <!-- <textarea style="font-size:28rpx;display:inline-block;padding-top:20rpx;" value="{{orderInfo.remark}}" readonly disabled="true" auto-height/> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view style="height:180rpx"></view>
+
+<view class="bot">
+  <button class="btn1" onTap="backHome">返回首页</button>
+  <button onTap="makePhoneCall" class="btn">联系客服</button>
+</view>

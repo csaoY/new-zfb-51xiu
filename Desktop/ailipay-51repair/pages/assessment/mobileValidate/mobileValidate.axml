@@ -1,0 +1,11 @@
+<!--pages/assessment/phonetest/phonetest.wxml-->
+<view class="con">
+<view class="form">
+<input placeholder="输入手机号">
+</view>
+
+<view class="bot">
+    <button onTap="next">下一步</button>
+  </view>
+</view>
+

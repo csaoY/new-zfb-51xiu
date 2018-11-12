@@ -1,0 +1,101 @@
+/* pages/more/myorder/myorder.wxss */
+
+.con {
+  font-size: 26rpx;
+  width: 100%;
+}
+
+.order-list {
+  background: white;
+  width: 100%;
+}
+
+.first-bar {
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #eee;
+}
+
+.time {
+  margin-left: 30rpx;
+}
+
+.fin {
+  float: right;
+  margin-right: 30rpx;
+}
+
+.second-bar {
+  padding-top: 15rpx;
+  height: 100rpx;
+}
+
+.order-list {
+  margin-top: 30rpx;
+}
+
+.second-bar image {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid black;
+  float: left;
+  margin-left: 30rpx;
+}
+
+.item {
+  float: left;
+  width: 400rpx;
+  margin-left: 10rpx;
+}
+
+.order-num {
+  line-height: 40rpx;
+}
+
+.money {
+  line-height: 40rpx;
+}
+
+.shou {
+  display: inline-block;
+  text-align: center;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #48b528;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: white;
+  float: left;
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+}
+
+.xiu {
+  display: inline-block;
+  text-align: center;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #ff9c00;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: white;
+  float:left;
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+}
+
+.noorder {
+  width: 500rpx;
+  height: 500rpx;
+  margin: 200rpx 0 0 125rpx;
+}
+
+.send{
+  float:right;width:200rpx;height:100rpx;
+}
+
+.send>button{
+  width:60%;height:60rpx;font-size:24rpx;background:#ff9c00;color:white;line-height:60rpx;margin-top:15rpx;
+}

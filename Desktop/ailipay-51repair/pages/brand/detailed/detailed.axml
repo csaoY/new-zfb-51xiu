@@ -1,0 +1,42 @@
+<view class="con">
+  <view class="model">
+    <text class="title">{{plan.faultVO.singleName}}问题</text>
+    <view class="hr">
+      <view class="hr-left "></view>
+    </view>
+    <view class="">
+      <view class="a1">{{plan.faultVO.name}}</view>
+    </view>
+  </view>
+  <view class="model">
+    <text class="title">维修方案</text>
+    <view class="hr">
+      <view class="hr-left"></view>
+    </view>
+    <block a:for="{{plan.planList}}" a:for-index="idx" a:key="id" a:for-item="plan2">
+      <view class="box" onTap="selectItem" data-id="{{plan2.id}}">
+        <view a:if="{{plan2.isSelected===true}}" class="box-title active" data-id="{{plan2.id}}">
+          <text>{{plan2.faultPartDetail}}</text>
+          <view class="price">￥{{plan2.price}}</view>
+          <view class="select"></view>
+        </view>
+        <view a:elif="{{plan2.isSelected===false}}" class="box-title" data-id="{{plan2.id}}">
+          <text>{{plan2.faultPartDetail}}</text>
+          <view class="price">￥{{plan2.price}}</view>
+          <view class="select"></view>
+        </view>
+        <view class="box-content">
+          <view class="point">维修方案：{{plan2.plan}}</view>
+          <view class="point">{{plan.faultVO.remark}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view style="height:110rpx;"></view>
+<view class="bot" a:if="{{selectedPlanList.length===0}}">
+  <button onTap="next" disabled style="height: 100%;">下一步</button>
+</view>
+<view class="bot" a:elif>
+  <button onTap="next" style="height: 100%;background: #ff9d00;">下一步</button>
+</view>

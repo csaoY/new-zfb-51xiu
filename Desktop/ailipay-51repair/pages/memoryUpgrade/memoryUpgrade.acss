@@ -1,0 +1,56 @@
+page{
+background-color:white;
+}
+.con{
+  width:100%;font-size:28rpx;
+}
+.con .model{
+  width:720rpx;margin:0 auto;margin-top:15rpx;
+} 
+.con>image{
+  width:750rpx;height:328rpx;
+}
+
+.hr{
+    width:720rpx;height:5rpx;border-radius: 1rpx;background:#d3d3d3;margin-top:10rpx;
+}
+.hr-left{
+     width:20%;height:5rpx;background:#ff9d00
+}
+.a-model{
+  display: inline-block;width:300rpx;border:1px solid #d3d3d3;border-radius: 5px;text-align: center;line-height: 70rpx;height:70rpx;margin-left:40rpx;margin-top:20rpx;
+}
+.model-active{
+  border:1px solid #ff9d00;color:#ff9d00
+}
+.title{
+  color:#ff9d00;margin-top:42rpx;
+}
+.size{
+   display: inline-block;width:300rpx;border:1px solid #d3d3d3;border-radius: 5px;text-align: center;line-height: 70rpx;height:70rpx;margin-left:40rpx;margin-top:20rpx;
+}
+.size-active{
+  border:1px solid #ff9d00;color:#ff9d00
+}
+.price{
+  margin-top:30px;font-size:32rpx;
+}
+.all-price{
+color:#ff9d00;font-weight:bold
+}
+
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10rpx 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.bot>button {
+  width: 97%;
+  color: #fff;
+  margin:0 auto;
+}

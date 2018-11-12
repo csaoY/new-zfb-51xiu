@@ -1,0 +1,112 @@
+.container {
+  font-family: Microsoft YaHei;
+  font-size: 26rpx;
+}
+
+.tab-flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.left-tab {
+  /*height: 1120rpx;*/
+  width: 200rpx;
+  flex-direction: column;
+}
+
+.brand {
+  height: 80rpx;
+  width: 200rpx;
+  display: inline-block;
+  border-bottom: 1px #e3e3e3 solid;
+  line-height: 80rpx;
+}
+
+.brand-active {
+  height: 80rpx;
+  width: 190rpx;
+  display: inline-block;
+  color: #ff9d00;
+  line-height: 80rpx;
+  border-left: 10rpx #ff9d00 solid;
+  border-bottom: 1px #e3e3e3 solid;
+  background: white;
+}
+
+.cla {
+  margin-left: 20rpx;
+  line-height: 80rpx;
+}
+
+.brand-active>.cla {
+  margin-left: 10rpx;
+}
+
+.brand-title {
+  height: 80rpx;
+  width: 200rpx;
+  display: inline-block;
+}
+
+.active {
+  color: #ff9d00;
+  border: 1px solid #ff9d00;
+}
+
+.right-tab {
+  /*height: 1120rpx;*/
+  width: 550rpx;
+  flex-direction: column;
+  background: #fff;
+}
+
+.kind-title {
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.pad {
+  width: 260rpx;
+  height: 60rpx;
+  border: 1px solid #d3d3d3;
+  margin-left: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 3px;
+}
+
+.phone-active {
+  border: 1px solid #ff9d00;
+  color: #ff9d00;
+  width: 260rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 3px;
+}
+
+.phone-bar {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px #e3e3e3 dotted;
+  position: relative;
+}
+
+.type {
+  margin-left: 50rpx;
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  height: 80rpx;
+}
+
+.phone-bar .price {
+  position: absolute;
+  right: 50rpx;
+}

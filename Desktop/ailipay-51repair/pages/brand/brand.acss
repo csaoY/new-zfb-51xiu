@@ -1,0 +1,112 @@
+.container {
+  height: 100%;
+  color: #333;
+}
+
+.top-tab {
+  width: 750rpx;
+  height: 100rpx;
+  background: #298de5;
+  color: #8ccefd;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  box-shadow: 0 2px 2px #bebebe;
+  margin: 0 0 8rpx 0;
+  z-index: 9999;
+}
+
+.toptab.active {
+  color: #fff;
+  border-bottom: solid 2px #fff;
+}
+
+.activity {
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.activity image {
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.placehold {
+  font-size: 28rpx;
+  padding: 80rpx 0;
+}
+
+/*
+  new
+*/
+
+.unread {
+  color: #9a9c9b;
+  height: 60rpx;
+  padding: 10rpx 40rpx;
+  text-align: left;
+  width: 670rpx;
+}
+
+.unread text {
+  display: inline-block;
+  line-height: 60rpx;
+  font-size: 22rpx;
+}
+
+.unread image {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  float: right;
+}
+
+.notify-item {
+  width: 680rpx;
+  background: #fff;
+  padding: 25rpx 70rpx 25rpx 0;
+  border-bottom: solid 1px #ebebeb;
+}
+
+.notify-item  image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+
+.notify-item .avatar {
+  flex: 1;
+}
+
+.notify-item .notify-content {
+  flex: 4;
+  text-align: left;
+}
+
+.notify-item .notify-content text {
+  display: block;
+}
+
+.notify-item .notify-content .notify-source {
+  color: #818a8f;
+  font-size: 28rpx;
+  padding: 0 0 8rpx 0;
+}
+
+.notify-item .notify-content .notify-title {
+  color: #afafaf;
+  font-size: 30rpx;
+  line-height: 34rpx;
+}
+
+.placehold {
+  padding: 80rpx 0;
+  font-size: 28rpx;
+}
+
+.arrow {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,34 @@
+<import src="../templates/netError.axml"/>
+<view class="con">
+  <image src="/images/banner.jpg"></image>
+  <view class="model">
+    <text class="title">选择升级机型</text>
+    <view class="hr">
+      <view class="hr-left "></view>
+    </view>
+    <block a:for="{{versionList}}" a:for-index="idx" a:for-item="item">
+      <view class="a-model {{item.versionId==postid ? 'model-active' : ''}} " data-id="{{item.versionId}}" onTap="selectmodel" data-version-name="{{item.versionName}}">{{item.versionName}}</view>
+    </block>
+  </view>
+   <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}"/>
+  <view class="model">
+    <text class="title">升级内存</text>
+    <view class="hr">
+      <view class="hr-left"></view>
+    </view>
+    <block a:for="{{ramPlanList}}" a:for-index="idx" a:for-item="item">
+      <view class="size {{upid==item.pId?'size-active':''}}" onTap="sizeselect" data-id="{{item.pId}}" data-price="{{item.price}}" data-list="{{item}}">{{item.plan}}</view>
+    </block>
+    <view class="price">
+      <view hidden="{{price==''}}">升级费用<text class="all-price">￥{{price}}</text></view>
+      <view hidden="{{price!==''}}">升级费用<text class="all-price">￥0.00</text></view>
+    </view>
+  </view>
+
+<view style="height:140rpx"></view>
+<view class="bot" a:if="{{price===''}}">
+  <button onTap="next" disabled style="height: 100%;">下一步</button>
+</view>
+<view class="bot" a:elif>
+  <button onTap="next" style="height: 100%;background: #ff9d00;">下一步</button>
+</view>

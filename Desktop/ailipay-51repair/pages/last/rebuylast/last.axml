@@ -1,0 +1,84 @@
+<!-- pages/last/last.wxml -->
+<view class="con">
+  <view class="bar-all">
+    <!--<view class="bar bar-active">
+  </view>
+  <view class="bar"></view>
+  <view class="bar"></view>
+  <view class="bar"></view>
+  <view class="point point1"></view>
+  <view class="point point2"></view>
+  <view class="point point3"></view>
+  <view class="point point4"></view>
+  <view class="point point5"></view>
+  -->
+  <view class="bar">
+    <view class="bar-active"></view>
+    <view class="point point1"></view>
+    <view class="point point2"></view>
+    <view class="point point3"></view>
+    <view class="point point4"></view>
+    <view class="point point5"></view>
+  </view>
+  <text class="text1">下单成功</text>
+  <text class="text2" a:if="{{ind==='1'}}">待上门</text>
+  <text class="text2" a:elif>待发货</text>
+  <text class="text3" a:if="{{ind==='1'}}">维修中</text>
+  <text class="text3" a:elif>待收货</text>
+  <text class="text4" a:if="{{ind==='1'}}">收款结算</text>
+  <text class="text4" a:elif>检测中</text>
+  <text class="text5">已完成</text>
+</view>
+<view class="content">
+  <view class="yes"></view>
+  <view class="tit">订单提交完成!</view>
+  <view hidden="{{ind==='1'}}">已安排师傅为您上门服务，稍候会联系您</view>
+  <view hidden="{{ind!='1'}}">请保持通话正常，稍后客服会联系您，安排上门收件。</view>
+</view>
+<view class="send" hidden="{{ind!='1'}}">
+  <view class="tle">寄件信息</view>
+  <view class="hr"></view>
+  <view class="send-list">
+    <view class="list-l">收件人：</view>
+    <view class="list-r">{{mailInfo.contactPerson}}</view>
+  </view>
+  <view class="send-list">
+    <view class="list-l">邮寄地址：</view>
+    <view class="list-r">{{mailInfo.address}}</view>
+  </view>
+  <view class="send-list">
+    <view class="list-l">邮编：</view>
+    <view class="list-r">{{mailInfo.areaCode}}</view>
+  </view>
+  <view class="send-list">
+    <view class="list-l">联系电话：</view>
+    <view class="list-r">{{mailInfo.tel}}</view>
+  </view>
+</view>
+<view class="notice" hidden="{{ind==='1'}}">
+  <view class="tle">注意事项</view>
+  <view class="hr"></view>
+  <view class="txt">1、交易时请带上身份证、满18周岁才可以交易。临时身份证、过期身份证等其他证件均不可作为回收身份证明。</view>
+  <view class="txt">2、请把手机充下电、不要将手机恢复出厂设置，方便工作人员检测。</view>
+</view>
+</view>
+<view class="notice" hidden="{{ind!='1'}}">
+<view class="tle">注意事项</view>
+<view class="hr"></view>
+<block a:for="{{precautions}}">
+  <view class="txt">
+    <view style="display:inline-block;width:20rpx;float:left;"> 
+      {{index+1}}、
+    </view>
+    <view style="display:inline-block;width:690rpx;float:left;margin-left:10rpx;">
+         {{item}}
+        </view>
+    <view style="clear:both"></view>
+  </view>
+</block>
+</view>
+<view style="height:120rpx;"></view>
+<view class="bot">
+<button class="read" onTap="orderDetail">查看订单</button>
+<button class="back" onTap="backHome">继续回收</button>
+</view>

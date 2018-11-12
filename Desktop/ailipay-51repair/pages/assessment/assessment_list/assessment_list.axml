@@ -1,0 +1,31 @@
+<view class="con">
+  <view class="phone-kind">
+    <text>评估型号:  {{phone}}</text>
+  </view>
+  <view class="issue">
+    <block a:for="{{assessments}}" a:key="unique" a:for-index="idx" a:for-item="assessment" data-idx="{{idx}}">
+      <view class="issue-list">
+        <text class="name">{{idx+1}}  {{assessment.typeName}}</text>
+        <text class="content">{{assessment.assessment_name_selected}}</text>
+      </view>
+    </block>
+  </view>
+  <view style="background: white;padding-bottom: 20rpx;">
+    <block a:for="{{selectedOptions}}" a:key="id" a:for-item="option" a:for-index="idx">
+      <view class="select">{{option.detailName}}</view>
+    </block>
+  </view>
+  <view class="modify">
+    <text class="price-title">评估价格</text>
+    <text class="price">￥{{price}}</text>
+    <view class="re-modify" onTap="remodify">重新评估</view>
+  </view>
+  <view style="height:36rpx;"></view>
+  <view class="bot" a:if="{{price<50}}">
+      <button onTap="order" class="btn btn1" style="height: 100%;" disabled>立即下单</button>
+    </view>
+    <view class="bot" a:elif>
+      <button onTap="order" class="btn btn1" style="height: 100%;background: #ff9d00;">立即下单</button>
+    </view>
+</view>
+    

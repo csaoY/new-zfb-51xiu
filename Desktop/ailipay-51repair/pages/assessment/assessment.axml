@@ -1,0 +1,48 @@
+<import src="../templates/netError.axml" />
+<view class="con">
+  <progress percent="{{pro}}" show-info activeColor="#ff9d00" backgroundColor="#d3d3d3" />
+  <view class="phone-kind">
+    <text>评估型号: {{phone}}</text>
+  </view>
+  <template a:if="{{hasNetError===true}}" is="netError" data="{{...item}}" />
+  <block a:for="{{assessments}}" a:key="typeId" a:for-index="idx" a:for-item="assessment" data-idx="{{idx}}">
+    <view class="issue">
+      <view class="issue_list">
+        <view class="issue-title">
+          <text class="icon icon{{idx+1}}">{{idx+1}}</text>{{assessment.typeName}}
+        </view>
+        <text class="show-issue">{{assessment.assessment_name_selected}}</text>
+        <view class="modify" hidden="{{eventId<idx}}" data-idx="{{idx}}" onTap="onModifyItem">修改</view>
+        <view a:if="{{eventId==idx}}">
+          <block a:for="{{assessment.detail}}" a:key="id" a:for-item="assessmentSub">
+            <view a:if="{{assessmentSub.isSelected==true}}" class="select slect-active" data-idx="{{idx}}" data-assessmentName="{{assessmentSub.datail}}" data-assessmentid="{{assessmentSub.id}}" onTap="onSelectItem">{{assessmentSub.datail}}</view>
+            <view a:elif="{{assessmentSub.isSelected==false}}" class="select" data-idx="{{idx}}" data-assessmentName="{{assessmentSub.datail}}" data-assessmentid="{{assessmentSub.id}}" onTap="onSelectItem">{{assessmentSub.datail}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view a:if="{{options.length!=0}}" class="issue">
+    <view class="issue_list">
+      <view class="issue-title">
+        功能选项(可多选或者不选)
+      </view>
+      <text class="show-issue"></text>
+      <view>
+        <block a:for="{{options}}" a:key="id" a:for-item="option" a:for-index="idx">
+          <view a:if="{{option.isSelected==true}}" class="select slect-active" data-idx="{{idx}}"  data-optionid="{{option.id}}" onTap="onSelectOptionItem">{{option.detailName}}</view>
+          <view a:elif="{{option.isSelected==false}}" class="select" data-idx="{{idx}}" data-optionid="{{option.id}}" onTap="onSelectOptionItem">{{option.detailName}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  
+  <view style="height:136rpx"></view>
+  <view class="bot" a:if="{{pro!==100}}">
+    <button onTap="showList" disabled>立即估价</button>
+  </view>
+  <view class="bot" a:elif>
+    <button onTap="showList" style="height: 100%;background: #ff9d00;">立即估价</button>
+  </view>
+</view>
